@@ -1,0 +1,17 @@
+
+
+
+
+#需要获取最后一个"\"所在的位置
+=FIND("@",SUBSTITUTE(A1,"\","@",LEN(A1)-LEN(SUBSTITUTE(A1,"\",""))))
+
+#返回左边的
+=left(A1,index)
+
+#返回文件名
+=MID(A1,FIND("*",SUBSTITUTE(A1,"\","*",LEN(A1)-LEN(SUBSTITUTE(A1,"\",""))))+1,LEN(A1))
+
+
+#最有用的：以一列作为范围。。。如果A1在B列存在，返回Y
+if(countif(B:B,A1),"Y","N") 
+
